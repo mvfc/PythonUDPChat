@@ -9,9 +9,9 @@ def clientsend():
 		sock1 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	except socket.error:
 		sys.exit()
-	msg = input('Digite a mensagem a ser enviada\n')
+	msg = input('Type the message to be sent\n')
 	sock1.sendto(msg.encode('utf-8'), (HOST, PORT))
-	print('Mensagem enviada')
+	print('Message sent')
 
 def clientreceive():
 	try:
@@ -26,8 +26,8 @@ def clientreceive():
 def menu():
 	while True:
 		clientsend()
-		resposta = clientreceive()
-		print('Resposta recebida')
-		print(resposta)
+		answer = clientreceive()
+		print('Answer received')
+		print(answer)
 
 menu()
